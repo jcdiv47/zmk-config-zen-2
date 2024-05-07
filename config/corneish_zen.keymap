@@ -1,71 +1,220 @@
-/*
-*
-* Copyright (c) 2021 Darryl deHaan
-* SPDX-License-Identifier: MIT
-*
-*/
-
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/rgb.h>
-
 / {
-    chosen {
-        zmk,matrix_transform = &default_transform;
-        // zmk,matrix_transform = &five_column_transform;
-    };
+ combos {
+ // Symbols / Operations
+ compatible = "zmk,combos";
+ combo_lbkt {
+ timeout-ms = <50>;
+ key-positions = <4 5>; // KP: RT
+ bindings = <&mt RBKT LBKT>; // ][ // 可以用CMD+这个单手返回到代码上一个编辑的地方 或者网页返回
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_rbkt {
+ timeout-ms = <50>;
+ key-positions = <6 7>; // KP: YU
+ bindings = <&kp RBKT>; // ]
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_todo {
+ timeout-ms = <100>; // 因为同时按三个键，所以时间稍微调长一些，按照个人习惯调整。
+ key-positions = <3 4 5>; // KP: ert
+ bindings = <¯o_todo>; // - [ ] // 这个是个人习惯，当todo list 做好了就变成 - [x]
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_lpar {
+ timeout-ms = <50>;
+ key-positions = <16 17>; // KP: FG
+ bindings = <&mt RPAR LPAR>; // )(
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_rpar {
+ timeout-ms = <50>;
+ key-positions = <18 19>; // KP: HJ
+ bindings = <&kp RPAR>; // )
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_lbrc {
+ timeout-ms = <50>;
+ key-positions = <28 29>; // KP: VB
+ bindings = <&mt RBRC LBRC>; // }{
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_rbrc {
+ timeout-ms = <50>;
+ key-positions = <30 31>; // KP: NM
+ bindings = <&kp RBRC>; // }
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_fslh {
+ timeout-ms = <50>;
+ key-positions = <19 30>; // KP: BJ
+ bindings = <&kp FSLH>; // forward slash /
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_bslh {
+ timeout-ms = <50>;
+ key-positions = <16 29>; // KP: VF
+ bindings = <&kp BSLH>; // back slash \
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_equal {
+ timeout-ms = <50>;
+ key-positions = <9 10>; // KP: op
+ bindings = <&mt GREATER_THAN EQUAL>; // > (= & +) //短击连着长按同一个键 即可输出箭头 => 
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_minus2 {
+ timeout-ms = <50>;
+ key-positions = <8 9>; // KP: io
+ bindings = <&mt LESS_THAN MINUS>; // (< & -) // 结合上面=> 单杠或者双杠的双向箭头 
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_excl {
+ timeout-ms = <50>;
+ key-positions = <8 21>; // KP: il
+ bindings = <&kp EXCLAMATION>; // ! // 常用符号 一般在句子结尾 放得里逗号句号近一点 IL不容易误触也符合手型
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_tag {
+ timeout-ms = <50>;
+ key-positions = <3 4>; // KP: er
+ bindings = <&mt GREATER_THAN LESS_THAN>; // > < // 由于上面的[](){}都可以用左手单手输入了，所以加一个同样原理的<> 方便html写tag
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_js_lt{
+ timeout-ms = <100>; // 因为同时按三个键，所以时间稍微调长一些，按照个人习惯调整。
+ key-positions = <27 28 29>; // KP: xc
+ bindings = <¯o_js_tl>; // (`${}`) // 常用符号组合，由于28 29可以输出{}，因此加一个27输出这个符号组合非常合理好记
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_dollar {
+ timeout-ms = <50>;
+ key-positions = <27 28>; // KP: xc
+ bindings = <&kp DOLLAR>; // ($) // 因为上面的符号组合用到了$, 所以顺势将27 28设为输出$
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_double_quote{
+ timeout-ms = <50>;
+ key-positions = <23 35>; // KP: rshft '
+ bindings = <&kp LS(SQT)>; // select string and => "string" // 右手拿着鼠标选择string，然后大拇指靠近键盘同时按右下角两个键输出double quote，这样就不需要按shift + ‘了，手都不需要离开鼠标。
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_under {
+ timeout-ms = <100>; // 因为是两字手分别同时按键，所以时间稍微调长一些，按照个人习惯调整。
+ key-positions = <29 30>; // KP: BN
+ bindings = <&kp UNDER>; // (_) // 象形+位置
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_minus {
+ timeout-ms = <100>; // 因为是两字手分别同时按键，所以时间稍微调长一些，按照个人习惯调整。
+ key-positions = <17 18>; // KP: GH 
+ bindings = <&kp MINUS>; // (-) // 象形+位置
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_pipe_pilcrow {
+ timeout-ms = <100>; // 因为是两字手分别同时按键，所以时间稍微调长一些，按照个人习惯调整。
+ key-positions = <5 6>; // KP: TY
+ bindings = <&mt LA(N7) PIPE>; // (¶ |) ¶:start of a paragraph // 象形+位置
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_hash {
+ timeout-ms = <50>;
+ key-positions = <3 14>; // KP: SE
+ bindings = <&kp HASH>; // (#) // 写Markdown标题和Python comment比较方便，还因为 “#” 本身就是 “shift+3”，而3的位置在普通佩列键盘的E上面
+ layers = <0 1 2 3 4 5>;
+ };
+
+ // arrow keys
+ combo_right {
+ timeout-ms = <50>;
+ key-positions = <15 16>; // KP: DF
+ bindings = <&kp RIGHT>; // 方便中文输入切换下一个选项，结合右手的JK enter，小键盘输入中文也毫无障碍
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_left {
+ timeout-ms = <50>;
+ key-positions = <14 15>; // KP: SD
+ bindings = <&kp LEFT>; // 同上逻辑，方便中文输入。再加上强迫症，所以上下左右都放了，形成一个像游戏手柄的D-Pad
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_up{
+ timeout-ms = <50>;
+ key-positions = <3 15>; // KP: ED 
+ bindings = <&kp UP>; // 上下键不怎么用，一些需要用上下左右的组合软件功能键，我都放在切层里，用上一篇中方向键的位置。如果使用的话是直接按两个键中间
+ layers = <0 1 2 3 4 5>;
+ }; 
+ combo_down {
+ timeout-ms = <50>;
+ key-positions = <15 27>; // KP: DX
+ bindings = <&kp DOWN>; 
+ layers = <0 1 2 3 4 5>;
+ }; 
+
+ // Power ESC ENTER
+ combo_k_pwr {
+ timeout-ms = <50>;
+ key-positions = <0 38>;
+ bindings = <&kp K_PWR>; // Power (Keyboard) // 熄屏
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_esc {
+ timeout-ms = <50>;
+ key-positions = <0 1>;
+ bindings = <&kp ESC>; // ESC
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_left_bspc {
+ timeout-ms = <50>;
+ key-positions = <12 13>; // KP: CAP A
+ bindings = <&kp BSPC>; // backspace // 方便右手鼠标，左手删除
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_alt_bspc {
+ timeout-ms = <50>;
+ key-positions = <20 21>; // KP: KL
+ bindings = <&kp LA(BSPC)>; // Alt(backspace) // 英文输入方便快捷删除整个单词
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_enter {
+ timeout-ms = <100>;
+ key-positions = <19 20>; // KP: JK
+ bindings = <&kp ENTER>; // enter // 个人偏好，觉得JK输入ENTER很爽。虽然上一篇中提到右手有个拇指键是Enter，但我从来都不用，拇指负责功能和切层键还有空格。
+ layers = <0 1 2 3 4 5>;
+ };
+ combo_lock {
+ timeout-ms = <50>;
+ key-positions = <0 5 38>; // KP: ` + T + command
+ bindings = <&tog LOC>; // to lock layer // 上一篇提到的切换到全是&的层，方便清理键盘，避免按压输入内容。
+ };
+ combo_key_repeat {
+ timeout-ms = <100>;
+ key-positions = <12 24>; // KP: Caps Shift
+ bindings = <&key_repeat>; // 重复上一个或者一组输入，详情看zmk doc 
+ layers = <0 1 2 3 4 5>;
+ };
+ 
+ };
 };
 
-/ {
-    keymap {
-        compatible = "zmk,keymap";
+// utility bindings = <¯o_todo>; // - [ ]
+macro_todo: macro_todo {
+label = "macro_todo";
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+wait-ms = <10>;
+tap-ms = <10>;
+bindings
+= <&kp MINUS &kp SPACE &kp LBKT &kp SPACE &kp RBKT &kp SPACE>
+;
+};
 
-        default_layer {
-            display-name = "QWERTY";
-// --------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-            bindings = <
-&kp ESC &kp Q   &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp SQT
-&kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp RET
-&kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-               &kp LGUI &mo 1 &kp SPACE   &kp BSPC &mo 2 &kp RALT
-            >;
-        };
-
-        lower_layer {
-            display-name = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-            bindings = <
-&kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                                  &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &trans
-&kp LSHFT  &rgb_ug RGB_OFF   &rgb_ug RGB_ON  &ext_power EP_OFF  &ext_power EP_ON  &rgb_ug RGB_EFF            &rgb_ug RGB_EFR        &rgb_ug RGB_SPI   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD    &trans &none
-                                     &kp LGUI     &trans       &kp SPACE                                        &kp RET  &trans   &kp RALT
-            >;
-        };
-
-        raise_layer {
-            display-name = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-            bindings = <
-&kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                           &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-&kp LCTRL &none   &none  &none  &none   &none                             &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-&kp LSHFT &out OUT_USB   &out OUT_BLE &none   &none   &none                  &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                          &kp LGUI &trans   &kp SPACE                           &kp RET   &trans    &kp RALT
-            >;
-        };
-    };
+// programming
+macro_js_tl: macro_js_tl {
+label = "macro_js_tl";
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+wait-ms = <10>;
+tap-ms = <10>;
+bindings
+= <&kp GRAVE &kp DOLLAR &kp LBRC &kp RBRC &kp GRAVE &kp LEFT &kp LEFT>
+;
 };
