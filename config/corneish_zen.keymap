@@ -52,21 +52,6 @@
                                      &kp LGUI     &trans       &kp SPACE                                        &kp RET  &trans   &kp RALT
             >;
         };
-
-        raise_layer {
-            display-name = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-            bindings = <
-&kp TAB    &kp MINUS       &kp FSLH         &kp N7  &kp N8  &kp N5   &kp CARET  &trans     &kp UP    &trans     &trans    &kp BSPC
-&trans     &mt &mo 2 PLUS  &kp KP_MULTIPLY  &kp N4  &kp N5  &kp N6   &kp PRCNT  &kp LEFT   &kp DOWN  &kp RIGHT  &kp SEMI  &kp GRAVE
-&kp LSHFT  &trans          &kp EQUAL        &kp N1  &kp N2  &kp N3   &kp AMPS   &kp TILDE  &trans    &kp COMMA  &trans    &kp RSHFT
-                           &mt LCTRL AT  &mt LALT DOT  &mt CMD N0  &kp RET  &kp SPACE  &mt &mo 2 CMD
-            >;
-        };
     };
 };
 
@@ -78,6 +63,18 @@
             timeout-ms = <50>;
             key-positions = <4 5>; // KP: RT
             bindings = <&mt RBKT LBKT>; // ][ // 可以用CMD+这个单手返回到代码上一个编辑的地方 或者网页返回
+            layers = <0 1 2 3 4 5>;
+        };
+        combo_tag {
+            timeout-ms = <50>;
+            key-positions = <3 4>; // KP: er
+            bindings = <&mt GREATER_THAN LESS_THAN>; // > < // 由于上面的[](){}都可以用左手单手输入了，所以加一个同样原理的<> 方便html写tag
+            layers = <0 1 2 3 4 5>;
+        }; 
+        combo_js_lt {
+            timeout-ms = <100>; // 因为同时按三个键，所以时间稍微调长一些，按照个人习惯调整。
+            key-positions = <27 28 29>; // KP: xc
+            bindings = <¯o_js_tl>; // (`${}`) // 常用符号组合，由于28 29可以输出{}，因此加一个27输出这个符号组合非常合理好记
             layers = <0 1 2 3 4 5>;
         };
     };
