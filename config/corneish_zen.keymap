@@ -79,3 +79,19 @@
         };
     };
 };
+
+/ {
+    macros {
+        // programming
+        macro_js_tl: macro_js_tl {
+            label = "macro_js_tl";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&kp GRAVE &kp DOLLAR &kp LBRC &kp RBRC &kp GRAVE &kp LEFT &kp LEFT>
+            ;
+        };
+    };
+};
