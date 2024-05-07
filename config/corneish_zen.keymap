@@ -49,7 +49,7 @@
 &kp TAB    &kp MINUS       &kp FSLH         &kp N7  &kp N8  &kp N5   &kp CARET  &trans     &kp UP    &trans     &trans    &kp BSPC
 &trans     &mt &mo 2 PLUS  &kp KP_MULTIPLY  &kp N4  &kp N5  &kp N6   &kp PRCNT  &kp LEFT   &kp DOWN  &kp RIGHT  &kp SEMI  &kp GRAVE
 &kp LSHFT  &trans          &kp EQUAL        &kp N1  &kp N2  &kp N3   &kp AMPS   &kp TILDE  &trans    &kp COMMA  &trans    &SHIFT
-                              &mt CTRL AT  &mt LALT DOT  &mt CMD N0  &kp RET  &kp SPACE  &mt &mo 2 CMD
+                           &mt LCTRL AT  &mt LALT DOT  &mt CMD N0  &kp RET  &kp SPACE  &mt &mo 2 CMD
             >;
         };
 
