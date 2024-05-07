@@ -31,12 +31,12 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             bindings = <
-&kp TAB &kp Q   &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-&kp ESC &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-&kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-               &kp LGUI &mt LALT SPACE &kp LGUI   &kp RET &mo 2 &kp RALT
+&kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T   &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp ESC    &kp A  &kp S  &kp D  &kp F  &kp G   &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B   &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+          &kp LGUI  &mt LALT SPACE  &kp LGUI   &kp RET  &mo 2  &kp RALT
             >;
-        };
+        }
 
         lower_layer {
             display-name = "NUMBER";
@@ -46,10 +46,10 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-&kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                                  &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &trans
-&kp LSHFT  &rgb_ug RGB_OFF   &rgb_ug RGB_ON  &ext_power EP_OFF  &ext_power EP_ON  &rgb_ug RGB_EFF            &rgb_ug RGB_EFR        &rgb_ug RGB_SPI   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD    &trans &none
-                                     &kp LGUI     &trans       &kp SPACE                                        &kp RET  &trans   &kp RALT
+&kp TAB    &kp MINUS       &kp FSLH         &kp N7  &kp N8  &kp N5   &kp CARET  &trans     &kp UP    &trans     &trans    &kp BSPC
+&trans     &mt &mo 2 PLUS  &kp KP_MULTIPLY  &kp N4  &kp N5  &kp N6   &kp PRCNT  &kp LEFT   &kp DOWN  &kp RIGHT  &kp SEMI  &kp GRAVE
+&kp LSHFT  &trans          &kp EQUAL        &kp N1  &kp N2  &kp N3   &kp AMPS   &kp TILDE  &trans    &kp COMMA  &trans    &SHIFT
+                              &mt CTRL AT  &mt LALT DOT  &mt CMD 0   &kp RET  &kp SPACE  &mt &mo 2 CMD
             >;
         };
 
