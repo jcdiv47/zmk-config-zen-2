@@ -70,28 +70,6 @@
             key-positions = <3 4>; // KP: er
             bindings = <&mt GREATER_THAN LESS_THAN>; // > < // 由于上面的[](){}都可以用左手单手输入了，所以加一个同样原理的<> 方便html写tag
             layers = <0 1 2 3 4 5>;
-        }; 
-        combo_js_lt {
-            timeout-ms = <100>; // 因为同时按三个键，所以时间稍微调长一些，按照个人习惯调整。
-            key-positions = <27 28 29>; // KP: xc
-            bindings = <¯o_js_tl>; // (`${}`) // 常用符号组合，由于28 29可以输出{}，因此加一个27输出这个符号组合非常合理好记
-            layers = <0 1 2 3 4 5>;
-        };
-    };
-};
-
-/ {
-    macros {
-        // programming
-        macro_js_tl: macro_js_tl {
-            label = "macro_js_tl";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings
-                = <&kp GRAVE &kp DOLLAR &kp LBRC &kp RBRC &kp GRAVE &kp LEFT &kp LEFT>
-            ;
         };
     };
 };
