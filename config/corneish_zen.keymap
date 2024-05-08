@@ -38,7 +38,7 @@
         combo_brackets {
             // 可以用CMD+这个单手返回到代码上一个编辑的地方 或者网页返回
             bindings = <&mt RBKT LBKT>; // CMD+[
-            key-positions = <4 5>; // RT
+            key-positions = <3 4>; // ER
             layers = <0>;
             timeout-ms = <50>;
         };
@@ -46,7 +46,7 @@
         // combo for typing parenthesis ()
         combo_parenthesis {
             bindings = <&mt RPAR LPAR>;
-            key-positions = <16 17>; // FG
+            key-positions = <15 16>; // DF
             layers = <0>;
             timeout-ms = <50>;
         };
@@ -54,7 +54,7 @@
         // combo for typing braces {}
         combo_braces {
             bindings = <&mt RBRC LBRC>;
-            key-positions = <28 29>; // VB
+            key-positions = <17 28>; // CV
             layers = <0>;
             timeout-ms = <50>;
         };
@@ -116,9 +116,9 @@
 
         num {
             bindings = <
-&kp GRAVE  &kp ASTERISK  &kp N7        &kp N8           &kp N9        &kp PLUS     &trans         &trans                &trans     &trans                 &trans  &trans
-&trans     &kp SLASH     &kp N4  &kp N5           &kp N6  &kp MINUS    &trans         &kp LEFT_BRACKET      &kp COMMA  &kp RIGHT_BRACKET      &trans  &trans
-&trans     &kp PERIOD    &kp N1  &kp N2     &kp N3  &kp EQUAL    &mt RA(F4) F4  &kp LEFT_PARENTHESIS  &trans     &kp RIGHT_PARENTHESIS  &trans  &trans
+&kp TAB  &kp N1      &kp N2  &kp N3  &kp N4  &kp N5     &kp N6               &kp N7     &kp N8     &kp N9    &kp N0  &kp BACKSPACE
+&trans   &kp SLASH   &kp N4  &kp N5  &kp N6  &kp MINUS  &trans               &kp MINUS  &kp EQUAL  &kp RBKT  &trans  &trans
+&trans   &kp PERIOD  &kp N1  &kp N2  &kp N3  &kp EQUAL  &mt RA(F4) F4        &kp LPAR   &trans     &kp RPAR  &trans  &trans
                                        &mt LEFT_GUI N0  &tog 3        &kp DEL      &trans         &trans                &trans
             >;
         };
