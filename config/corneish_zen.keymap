@@ -15,6 +15,7 @@
 #define BASE 0
 #define NUM 1
 #define NAV 2
+#define ADJUST 3
 
 / {
     chosen {
@@ -33,11 +34,36 @@
             layers = <0>;
         };
 
-        combo_bracket {
-            timeout-ms = <50>;
-            bindings = <&kp LBKT>;
-            key-positions = <4  5>; // RT
+        // combo for typing brackets []
+        combo_brackets {
+            // 可以用CMD+这个单手返回到代码上一个编辑的地方 或者网页返回
+            bindings = <&mt RBKT LBKT>; // CMD+[
+            key-positions = <4 5>; // RT
             layers = <0>;
+            timeout-ms = <50>;
+        };
+
+        // combo for typing parenthesis ()
+        combo_parenthesis {
+            bindings = <&mt RAPR LPAR>;
+            key-positions = <16 17>; // FG
+            layers = <0>;
+            timeout-ms = <50>;
+        };
+
+        // combo for typing braces {}
+        combo_braces {
+            bindings = <&mt RBRC LBRC>;
+            key-positions = <28 29>; // VB
+            layers = <0>;
+            timeout-ms = <50>;
+        };
+
+        // combo for toggle layer ADJUST
+        combo_tog_adjust {
+            bindings = <&tog ADJUST>;
+            key-positions = <24 23 35>;
+            timeout-ms = <100>;
         };
     };
 
@@ -99,9 +125,9 @@
 
         nav {
             bindings = <
-&trans  &trans     &trans        &trans        &trans          &trans    &kp LS(LG(Z))  &kp LG(V)  &kp LG(C)      &kp LG(X)     &kp LG(Z)  &trans
-&trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &trans    &trans         &kp LEFT   &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &trans     &trans        &trans        &trans          &trans    &trans         &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &trans
+&trans  &trans     &trans    &trans    &trans     &trans        &kp LS(LG(Z))  &kp LG(V)  &kp LG(C)      &kp LG(X)    &kp LG(Z)  &trans
+&trans  &kp LCTRL  &kp LALT  &kp LCMD  &kp LSHFT  &trans        &kp LEFT       &kp DOWN   &kp UP         &kp RIGHT    &trans     &trans
+&trans  &trans     &trans    &trans    &trans     &trans        &trans         &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
                                  &trans        &trans          &trans    &trans         &tog 3     &trans
             >;
         };
