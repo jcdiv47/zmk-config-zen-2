@@ -45,7 +45,7 @@
 
         // combo for typing parenthesis ()
         combo_parenthesis {
-            bindings = <&mt RAPR LPAR>;
+            bindings = <&mt RPAR LPAR>;
             key-positions = <16 17>; // FG
             layers = <0>;
             timeout-ms = <50>;
