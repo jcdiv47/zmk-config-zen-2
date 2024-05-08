@@ -129,6 +129,7 @@
         };
 
         adjust {
+            display-name = "ADJUST";
             bindings = <
 &sys_reset  &bootloader   &kp C_AL_SCREENSAVER  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &rgb_ug RGB_TOG    &rgb_ug RGB_BRI  &kp F7  &kp F8         &kp F9  &trans  &bt BT_CLR_ALL
 &to 0       &trans        &kp C_MUTE            &kp C_VOL_DN          &kp C_VOL_UP          &rgb_ug RGB_EFF    &rgb_ug RGB_BRD  &kp F4  &kp F5         &kp F6  &trans  &trans
