@@ -28,6 +28,14 @@
 / {
     combos {
         compatible = "zmk,combos";
+        
+        // combo for delete
+        combo {
+            bindings = <&kp DEL>;
+            key-positions = <36 40>;
+            layers = <0>;
+            timeout-ms = <50>;
+        };
 
         // combo for forward slash
         combo_fslh {
@@ -144,9 +152,9 @@
         nav {
             display-name = "NAVIGATE";
             bindings = <
-&trans  &trans     &trans    &trans    &trans     &trans        &kp LS(LG(Z))  &kp LG(V)  &kp LG(C)      &kp LG(X)    &kp LG(Z)  &trans
-&trans  &kp LCTRL  &kp LALT  &kp LCMD  &kp LSHFT  &trans        &kp LEFT       &kp DOWN   &kp UP         &kp RIGHT    &trans     &trans
-&trans  &trans     &trans    &trans    &trans     &trans        &trans         &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
+&trans  &trans     &trans    &trans    &trans     &trans        &none  &none     &kp UP         &none        &none    &none
+&trans  &kp LCTRL  &kp LALT  &kp LCMD  &kp LSHFT  &trans        &none  &kp LEFT  &kp DOWN       &kp RIGHT    &trans   &none
+&trans  &trans     &trans    &trans    &trans     &trans        &none  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END  &none
                                  &trans        &trans          &trans    &trans         &tog 3     &trans
             >;
         };
