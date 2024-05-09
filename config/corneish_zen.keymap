@@ -16,6 +16,7 @@
 #define NUM 1
 #define NAV 2
 #define ADJUST 3
+#define LOCK 5
 
 / {
     chosen {
@@ -68,10 +69,10 @@
             timeout-ms = <50>;
         };
 
-        // combo for toggle layer ADJUST
-        combo_tog_adjust {
-            bindings = <&tog ADJUST>;
-            key-positions = <24 23 35>;
+        // combo for toggle layer LOCK
+        combo_tog_layer_lock {
+            bindings = <&tog LOCK>;
+            key-positions = <0 5 38>;
             timeout-ms = <100>;
         };
     };
@@ -117,20 +118,20 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             display-name = "QWERTY";
             bindings = <
-&mt TILDE TAB  &kp Q      &kp W  &kp E   &kp R  &kp T      &kp Y  &kp U          &kp I      &kp O    &kp P     &kp BACKSPACE
-&lt NAV ESC    &lt NUM A  &kp S  &kp D   &kp F  &kp G      &kp H  &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
-&td0           &kp Z      &kp X  &kp C   &kp V  &kp B      &kp N  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp FSLH  &mt RSHIFT ENTER
-                  &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp ENTER  &kp BACKSPACE &mo NUM
+&mt TILDE TAB  &kp Q      &kp W  &kp E   &kp R  &kp T      &kp Y  &kp U          &kp I      &kp O    &kp P     &kp BSPC
+&lt NAV ESC    &lt NUM A  &kp S  &kp D   &kp F  &kp G      &kp H  &kp J          &kp K      &kp L    &kp SEMI  &SQT
+&td0           &kp Z      &kp X  &kp C   &kp V  &kp B      &kp N  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp FSLH  &mt RSHFT RET
+                  &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp RET  &kp BSPC  &mo NUM
             >;
         };
 
         num {
-            display-name = "NUMBER";
+            display-name = "NUMSYM"; // numbers and symbols
             bindings = <
-&kp TAB  &kp N1      &kp N2  &kp N3  &kp N4  &kp N5     &kp N6               &kp N7     &kp N8     &kp N9    &kp N0  &kp BACKSPACE
-&trans   &kp SLASH   &kp N4  &kp N5  &kp N6  &kp MINUS  &trans               &kp MINUS  &kp EQUAL  &kp RBKT  &trans  &trans
-&trans   &kp PERIOD  &kp N1  &kp N2  &kp N3  &kp EQUAL  &mt RA(F4) F4        &kp LPAR   &trans     &kp RPAR  &trans  &trans
-                                       &mt LEFT_GUI N0  &tog 3        &kp DEL      &trans         &trans                &trans
+&GRAVE  &kp EXCL    &kp AT  &kp HASH  &kp DLLR  &kp PRCNT        &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&trans  &kp N1      &kp N2  &kp N3    &kp N4    &kp N5           &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &RET
+&trans  &kp PERIOD  &kp N1  &kp N2  &kp N3  &kp EQUAL  &mt RA(F4) F4        &kp LPAR   &trans     &kp RPAR  &trans  &trans
+             &mo ADJUST  &kp LEFT_GUI   &kp DEL               &trans         &trans                &trans
             >;
         };
 
@@ -147,10 +148,20 @@
         adjust {
             display-name = "ADJUST";
             bindings = <
-&sys_reset  &bootloader   &kp C_AL_SCREENSAVER  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &rgb_ug RGB_TOG    &rgb_ug RGB_BRI  &kp F7  &kp F8         &kp F9  &trans  &bt BT_CLR_ALL
-&to 0       &trans        &kp C_MUTE            &kp C_VOL_DN          &kp C_VOL_UP          &rgb_ug RGB_EFF    &rgb_ug RGB_BRD  &kp F4  &kp F5         &kp F6  &trans  &trans
-&trans      &bt BT_SEL 0  &bt BT_SEL 1          &bt BT_SEL 2          &bt BT_SEL 3          &bt BT_SEL 4       &rgb_ug RGB_HUI  &kp F1  &kp F2         &kp F3  &trans  &trans
-                                                &kp LEFT_GUI          &trans                &kp BACKSPACE      &kp SPACE        &trans  &kp RIGHT_ALT
+&none  &kp C_BRI_DN     &kp C_BRI_UP     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG        &none  &none  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &none
+&none  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &none                  &none  &none  &none         &none         &none       &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &none  &sys_reset   &bootloader  &bt BT_CLR_ALL  &none
+                                                                       &none  &none  &none        &none  &none  &none
+            >;
+        };
+
+        lock {
+            display-name = "LOCK";
+            bindings = <
+&none  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+                     &none  &none  &none        &none  &none  &none
             >;
         };
     };
