@@ -97,7 +97,7 @@
             label = "TD0";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LEFT_SHIFT>, <&kp LC(SPACE)>;
+            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
 
         mtt: mtt {
@@ -132,10 +132,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             display-name = "QWERTY";
             bindings = <
-&mt TILDE TAB  &kp Q      &kp W  &kp E   &kp R  &kp T      &kp Y  &kp U          &kp I      &kp O    &kp P     &kp BSPC
-&lt NAV ESC    &lt NUM A  &kp S  &kp D   &kp F  &kp G      &kp H  &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
-&td0           &kp Z      &kp X  &kp C   &kp V  &kp B      &kp N  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp FSLH  &lt ADJUST RET
-                  &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp RET  &kp BSPC  &mo NUM
+&mt TILDE TAB  &kp Q  &kp W  &kp E   &kp R  &kp T      &kp Y  &kp U          &kp I      &kp O    &kp P     &kp BSPC
+&lt NAV ESC    &kp A  &kp S  &kp D   &kp F  &kp G      &kp H  &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
+&td0           &kp Z  &kp X  &kp C   &kp V  &kp B      &kp N  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp FSLH  &lt ADJUST RET
+                  &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp BSPC  &kp RET  &mo NUM
             >;
         };
 
