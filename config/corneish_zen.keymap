@@ -96,7 +96,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD0";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             // bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
             /*
             * outputs CAPS on a single tap,
@@ -155,7 +155,6 @@
             >;
         };
 
-* Copyright (c) 2021 Darryl deHaan
         nav {
             display-name = "NAVIGATE";
             bindings = <
