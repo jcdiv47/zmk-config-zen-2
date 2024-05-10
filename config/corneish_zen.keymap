@@ -30,9 +30,9 @@
         compatible = "zmk,combos";
         
         // combo for delete
-        combo {
+        combo_del {
             bindings = <&kp DEL>;
-            key-positions = <36 40>;
+            key-positions = <24 39>;
             layers = <0>;
             timeout-ms = <50>;
         };
@@ -97,7 +97,13 @@
             label = "TD0";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+            // bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+            /*
+            * outputs CAPS on a single tap,
+            * LSHIFT on a single press and hold,
+            * and CTRL-SPACE when the tap-dance is pressed twice
+            */
+            bindings = <&mt LSHIFT CAPS>, <&kp LC(SPACE)>;
         };
 
         mtt: mtt {
@@ -132,40 +138,40 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             display-name = "QWERTY";
             bindings = <
-&mt TILDE TAB  &kp Q  &kp W  &kp E   &kp R  &kp T      &kp Y  &kp U          &kp I      &kp O    &kp P     &kp BSPC
-&lt NAV ESC    &kp A  &kp S  &kp D   &kp F  &kp G      &kp H  &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
-&td0           &kp Z  &kp X  &kp C   &kp V  &kp B      &kp N  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp FSLH  &lt ADJUST RET
-                  &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp BSPC  &kp RET  &mo NUM
+&lt NAV TAB  &kp Q  &kp W  &kp E   &kp R  &kp T      &kp Y  &kp U          &kp I      &kp O    &kp P      &lt ADJUST SQT
+&kp ESC      &kp A  &kp S  &kp D   &kp F  &kp G      &kp H  &kp J          &kp K      &kp L    &kp SEMI   &kp SQT
+&td0         &kp Z  &kp X  &kp C   &kp V  &kp B      &kp N  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp MINUS  &kp EQUAL
+            &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp BSPC  &kp RET  &mo NUM
             >;
         };
 
         num {
             display-name = "NUMSYM"; // numbers and symbols
             bindings = <
-&kp GRAVE  &kp EXCL    &kp AT  &kp HASH  &kp DLLR  &kp PRCNT        &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans     &kp N1      &kp N2  &kp N3    &kp N4    &kp N5           &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp RET
-&trans     &kp PERIOD  &kp N1  &kp N2  &kp N3  &kp EQUAL  &mt RA(F4) F4        &kp LPAR   &trans     &kp RPAR  &trans  &trans
-             &none  &kp LEFT_GUI   &kp DEL               &trans         &trans                &trans
+&kp TILDE  &kp EXCL   &kp AT  &kp HASH  &kp DLLR  &kp PRCNT        &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &none
+&kp GRAVE  &kp N1     &kp N2  &kp N3    &kp N4       &kp N5        &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp BSPC
+&kp SHFT   &kp COMMA  &DOT    &FSLH     &BSLH     &kp EQUAL        &trans     &trans    &trans     &trans    &trans    &kp RET
+                               &none  &kp LEFT_GUI  &kp DEL        &trans  &trans  &trans
             >;
         };
 
         nav {
             display-name = "NAVIGATE";
             bindings = <
-&trans  &trans     &trans    &trans    &trans     &trans        &none  &none     &kp UP         &none        &none    &none
-&trans  &kp LCTRL  &kp LALT  &kp LCMD  &kp LSHFT  &trans        &none  &kp LEFT  &kp DOWN       &kp RIGHT    &trans   &none
-&trans  &trans     &trans    &trans    &trans     &trans        &none  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END  &none
-                                 &trans        &trans          &trans    &trans         &tog 3     &trans
+&trans  &trans     &trans    &trans    &trans     &kp INS        &kp HOME  &none     &kp UP    &none      &none   &none
+&trans  &kp LCTRL  &kp LALT  &kp LCMD  &kp LSHFT  &kp DEL        &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &none
+&trans  &trans     &trans    &trans    &trans      &trans        &none     &none     &none     &none      &none   &none
+                                   &trans  &trans  &trans        &trans  &trans    &trans
             >;
         };
 
         adjust {
             display-name = "ADJUST";
             bindings = <
-&none  &kp C_BRI_DN     &kp C_BRI_UP     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG        &none  &none  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &none
-&none  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &none                  &none  &none  &none         &none         &none       &none
-&none  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4           &none  &sys_reset   &bootloader  &bt BT_CLR_ALL  &none &none
-                                                                    &none  &none  &none           &none  &none  &none
+&none  &kp C_BRI_DN     &kp C_BRI_UP     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI    &rgb_ug RGB_TOG        &none  &none  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &none
+&none  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &ext_power EP_TOG        &none  &none  &none         &none         &none       &none
+&none  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3          &bt BT_SEL 4        &none  &sys_reset   &bootloader  &bt BT_CLR_ALL  &none &none
+                                                                         &none  &none  &none        &none  &none  &none
             >;
         };
 
