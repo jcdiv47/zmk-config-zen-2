@@ -32,7 +32,7 @@
         // combo for left direction
         combo_left {
             bindings = <&kp LEFT>;
-            key-postions = <12 13>;
+            key-positions = <12 13>;
             layers = <0>;
             timeout-ms = <50>;
         };
@@ -40,7 +40,7 @@
         // combo for up direction
         combo_up {
             bindings = <&kp UP>;
-            key-postions = <2 12>;
+            key-positions = <2 12>;
             layers = <0>;
             timeout-ms = <50>;
         };
@@ -48,7 +48,7 @@
         // combo for down direction
         combo_down {
             bindings = <&kp DOWN>;
-            key-postions = <12 14>;
+            key-positions = <12 14>;
             layers = <0>;
             timeout-ms = <50>;
         };
@@ -56,7 +56,7 @@
         // combo for right direction
         combo_right {
             bindings = <&kp RIGHT>;
-            key-postions = <12 15>;
+            key-positions = <12 15>;
             layers = <0>;
             timeout-ms = <50>;
         };
