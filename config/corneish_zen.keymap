@@ -41,14 +41,14 @@
         combo_fslh {
             bindings = <&kp FSLH>;
             key-positions = <3 16>;
-            layers = <0>;
+            layers = <NUM>;
             timeout-ms = <50>;
         };
 
         combo_bslh {
             bindings = <&kp BSLH>;
             key-positions = <8 19>;
-            layers = <0>;
+            layers = <NUM>;
             timeout-ms = <50>;
         };
 
@@ -57,7 +57,7 @@
             // 可以用CMD+这个单手返回到代码上一个编辑的地方 或者网页返回
             bindings = <&mt RBKT LBKT>; // CMD+[
             key-positions = <3 4>; // ER
-            layers = <0>;
+            layers = <NUM>;
             timeout-ms = <50>;
         };
 
@@ -65,7 +65,7 @@
         combo_parenthesis {
             bindings = <&mt RPAR LPAR>;
             key-positions = <15 16>; // DF
-            layers = <0>;
+            layers = <NUM>;
             timeout-ms = <50>;
         };
 
@@ -73,7 +73,7 @@
         combo_braces {
             bindings = <&mt RBRC LBRC>;
             key-positions = <27 28>; // CV
-            layers = <0>;
+            layers = <NUM>;
             timeout-ms = <50>;
         };
 
@@ -96,7 +96,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD0";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <100>;
             // bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
             /*
             * outputs CAPS on a single tap,
