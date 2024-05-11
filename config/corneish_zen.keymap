@@ -34,7 +34,7 @@
         combo_del {
             bindings = <&kp DEL>;
             key-positions = <24 39>;
-            layers = <NUM>;
+            layers = <0 1 2 3 4>;
             timeout-ms = <50>;
         };
 
@@ -42,14 +42,14 @@
         combo_fslh {
             bindings = <&kp FSLH>;
             key-positions = <3 16>;
-            layers = <NUM>;
+            layers = <0 1 2 3 4>;
             timeout-ms = <50>;
         };
 
         combo_bslh {
             bindings = <&kp BSLH>;
             key-positions = <8 19>;
-            layers = <NUM>;
+            layers = <0 1 2 3 4>;
             timeout-ms = <50>;
         };
 
@@ -58,7 +58,7 @@
             // 可以用CMD+这个单手返回到代码上一个编辑的地方 或者网页返回
             bindings = <&mt RBKT LBKT>; // CMD+[
             key-positions = <5 6>;
-            layers = <NUM>;
+            layers = <0 1 2 3 4>;
             timeout-ms = <50>;
         };
 
@@ -66,7 +66,7 @@
         combo_parenthesis {
             bindings = <&mt RPAR LPAR>;
             key-positions = <17 18>;
-            layers = <NUM>;
+            layers = <0 1 2 3 4>;
             timeout-ms = <50>;
         };
 
@@ -74,7 +74,7 @@
         combo_braces {
             bindings = <&mt RBRC LBRC>;
             key-positions = <29 30>;
-            layers = <NUM>;
+            layers = <0 1 2 3 4>;
             timeout-ms = <50>;
         };
 
@@ -82,7 +82,7 @@
         combo_mo_adjust {
             bindings = <&mo ADJUST>;
             key-positions = <36 41>;
-            layers = <NUM>;
+            layers = <0 1 2 3 4>;
             timeout-ms = <100>;
         };
 
@@ -92,7 +92,6 @@
             key-positions = <6 11 39>;
             timeout-ms = <100>;
         };
-    };
 
         // combo for toggle layer LOCK
         combo_tog_layer_lock {
