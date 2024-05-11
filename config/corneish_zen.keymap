@@ -16,7 +16,8 @@
 #define NUM 1
 #define NAV 2
 #define ADJUST 3
-#define LOCK 4
+#define COLEMAK 4
+#define LOCK 5
 
 / {
     chosen {
@@ -33,7 +34,7 @@
         combo_del {
             bindings = <&kp DEL>;
             key-positions = <24 39>;
-            layers = <0>;
+            layers = <NUM>;
             timeout-ms = <50>;
         };
 
@@ -56,7 +57,7 @@
         combo_brackets {
             // 可以用CMD+这个单手返回到代码上一个编辑的地方 或者网页返回
             bindings = <&mt RBKT LBKT>; // CMD+[
-            key-positions = <3 4>; // ER
+            key-positions = <5 6>;
             layers = <NUM>;
             timeout-ms = <50>;
         };
@@ -64,7 +65,7 @@
         // combo for typing parenthesis ()
         combo_parenthesis {
             bindings = <&mt RPAR LPAR>;
-            key-positions = <15 16>; // DF
+            key-positions = <17 18>;
             layers = <NUM>;
             timeout-ms = <50>;
         };
@@ -72,7 +73,7 @@
         // combo for typing braces {}
         combo_braces {
             bindings = <&mt RBRC LBRC>;
-            key-positions = <27 28>; // CV
+            key-positions = <29 30>;
             layers = <NUM>;
             timeout-ms = <50>;
         };
@@ -81,8 +82,18 @@
         combo_mo_adjust {
             bindings = <&mo ADJUST>;
             key-positions = <36 41>;
+            layers = <NUM>;
             timeout-ms = <100>;
         };
+
+        // combo for toggle layer COLEMAK
+        combo_tog_layer_colemak {
+            bindings = <&tog COLEMAK>;
+            key-positions = <6 11 39>;
+            timeout-ms = <100>;
+        };
+    };
+
         // combo for toggle layer LOCK
         combo_tog_layer_lock {
             bindings = <&tog LOCK>;
@@ -132,10 +143,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             display-name = "QWERTY";
             bindings = <
-&kp TAB      &kp Q  &kp W  &kp E   &kp R  &kp T      &kp Y  &kp U          &kp I      &kp O    &kp P      &lt ADJUST SQT
+&kp TAB      &kp Q  &kp W  &kp E   &kp R  &kp T      &kp Y  &kp U          &kp I      &kp O    &kp P      &kp BSPC
 &lt NAV ESC  &kp A  &kp S  &kp D   &kp F  &kp G      &kp H  &kp J          &kp K      &kp L    &kp SEMI   &kp SQT
 &td0         &kp Z  &kp X  &kp C   &kp V  &kp B      &kp N  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp MINUS  &kp EQUAL
-            &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp RET  &kp BSPC  &mo NUM
+            &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp RET  &lt ADJUST BSPC  &mo NUM
             >;
         };
 
@@ -166,6 +177,21 @@
 &none  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &ext_power EP_TOG        &none  &none  &none         &none         &none       &none
 &none  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3          &bt BT_SEL 4        &none  &sys_reset   &bootloader  &bt BT_CLR_ALL  &none &none
                                                                          &none  &none  &none        &none  &none  &none
+            >;
+        };
+
+        colemak {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  F  |  P  |  G  |   |  J  |  L   |  U  |  Y  |  :  | BKSP |
+            // | CTRL |  A  |  R  |  S  | _T_ |  D  |   |  H  | _N_  |  E  |  I  |  O  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  |  /  | RET  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            display-name = "COLEMAK";
+            bindings = <
+&kp TAB      &kp Q  &kp W  &kp F   &kp P  &kp G      &kp J  &kp L          &kp U      &kp Y    &kp SEMI   &lt ADJUST BSPC
+&lt NAV ESC  &kp A  &kp R  &kp S   &kp T  &kp D      &kp H  &kp N          &kp E      &kp I    &kp O      &kp SQT
+&td0         &kp Z  &kp X  &kp C   &kp V  &kp B      &kp K  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp MINUS  &kp EQUAL
+            &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp RET  &kp BSPC  &mo NUM
             >;
         };
 
