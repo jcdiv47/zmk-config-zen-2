@@ -30,6 +30,23 @@
     combos {
         compatible = "zmk,combos";
 
+        // combo for turning volume up
+        combo_vol_up {
+            bindings = <&kp C_VOL_UP>;
+            key-positions = <28 35>;
+            layers = <0 1 2 3 4>;
+            timeout-ms = <50>;
+        };
+
+        // combo for turning volume down
+        combo_vol_down {
+            bindings = <&kp C_VOL_DN>;
+            key-positions = <28 34>;
+            layers = <0 1 2 3 4>;
+            timeout-ms = <50>;
+        };
+
+
         // combo for delete
         combo_del {
             bindings = <&kp DEL>;
