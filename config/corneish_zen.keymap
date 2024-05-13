@@ -161,7 +161,7 @@
 
         htg: htg {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&kp>, <&tg>;
+            bindings = <&kp>, <&tog>;
             tapping-term-ms = <200>;
         };
     };
