@@ -180,7 +180,7 @@
 &kp TAB      &kp Q  &kp W  &kp E   &kp R  &kp T      &kp Y  &kp U          &kp I      &kp O    &kp P      &kp BSPC
 &lt NAV ESC  &kp A  &kp S  &kp D   &kp F  &kp G      &kp H  &kp J          &kp K      &kp L    &kp SEMI   &kp SQT
 &td0         &kp Z  &kp X  &kp C   &kp V  &kp B      &kp N  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp MINUS  &kp EQUAL
-            &kp LCTRL  &mt LALT SPACE  &kp LCMD      &kp RET  &kp SPACE  &htg CMD NUM
+            &kp LCTRL  &mt LALT SPACE  &kp LCMD      &kp RET  &kp SPACE  &htg LCMD NUM
             >;
         };
 
