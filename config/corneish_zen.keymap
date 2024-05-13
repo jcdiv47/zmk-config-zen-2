@@ -171,7 +171,7 @@
             bindings = <
 &kp TAB      &kp Q  &kp W  &kp F   &kp P  &kp G      &kp J  &kp L          &kp U      &kp Y    &kp SEMI   &kp BSPC
 &lt NAV ESC  &kp A  &kp R  &kp S   &kp T  &kp D      &kp H  &kp N          &kp E      &kp I    &kp O      &kp SQT
-&kp LSHFT    &kp Z  &kp X  &kp C   &kp V  &kp B      &kp K  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp FSLSH  &kp RET
+&kp LSHFT    &kp Z  &kp X  &kp C   &kp V  &kp B      &kp K  &mtt C_MUTE M  &kp COMMA  &kp DOT  &kp FSLH  &kp RET
             &kp LCTRL  &kp LALT  &mt LCMD SPACE      &kp BSPC  &kp LCMD  &mo NUM
             >;
         };
