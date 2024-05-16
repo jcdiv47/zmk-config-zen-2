@@ -14,7 +14,7 @@
 
 #define QWERTY 0
 #define COLEMAK 1
-#dfeine NUMBER 2
+#define NUMBER 2
 #define SYMBOL 3
 #define NAVIGATE 4
 #define MEDIA 5
