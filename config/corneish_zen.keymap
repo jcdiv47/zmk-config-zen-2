@@ -12,6 +12,13 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#define QWERTY 0
+#define COLEMAK 1
+#dfeine NUMBER 2
+#define SYMBOL 3
+#define NAVIGATE 4
+#define MEDIA 5
+
 / {
     chosen {
         zmk,matrix_transform = &default_transform;
@@ -32,13 +39,28 @@
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             bindings = <
 &kp TAB &kp Q   &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+&kp ESC &mt LCTRL A &mt LALT S &mt LGUI D &mt LSHFT F &kp G   &kp H &mt LSHFT J  &mt LGUI K     &mt LALT L   &mt LCTRL SEMI &kp SQT
+&kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
+               &lt MEDIA ESC &lt NAVIGATE SPACE &kp TAB   &lt SYMBOL RET &lt NUMBER BSPC &kp DEL
+            >;
+        };
+
+        colemak_layer {
+            display-name = "COLEMAK";
+// --------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            bindings = <
+&kp TAB &kp Q   &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
 &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
                &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
             >;
         };
 
-        lower_layer {
+        number_layer {
             display-name = "NUMBER";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
@@ -46,14 +68,14 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-&kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                                  &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &trans
-&kp LSHFT  &rgb_ug RGB_OFF   &rgb_ug RGB_ON  &ext_power EP_OFF  &ext_power EP_ON  &rgb_ug RGB_EFF            &rgb_ug RGB_EFR        &rgb_ug RGB_SPI   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD    &trans &none
-                                     &kp LGUI     &trans       &kp SPACE                                        &kp RET  &trans   &kp RALT
+&kp MINUS  &kp LPAR  &kp N7  &kp N8  &kp N9  &kp RPAR         &none  &none      &none     &none     &none      &none
+&kp EQUAL  &kp LBRC  &kp N4  &kp N5  &kp N6  &kp RBRC        &none  &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
+&kp COMMA  &kp LBKT  &kp N1  &kp N2  &kp N3  &kp RBKT         &none  &none      &none     &none     &none      &none
+                        &kp DOT  &kp N0  &kp MINUS         &none  &none   &none
             >;
         };
 
-        raise_layer {
+        symbol_layer {
             display-name = "SYMBOL";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
@@ -61,11 +83,41 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-&kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                           &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-&kp LCTRL &none   &none  &none  &none   &none                             &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-&kp LSHFT &out OUT_USB   &out OUT_BLE &none   &none   &none                  &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                          &kp LGUI &trans   &kp SPACE                           &kp RET   &trans    &kp RALT
+&kp GRAVE  &kp TILDE  &kp AMPS  &kp ASTRK  &kp FSLH   &kp BSLH        &none  &none      &none     &none     &none      &none
+&kp SEMI   &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS        &none  &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
+&none      &kp TILDE  &kp EXCL  &kp AT     &kp POUND  &kp PIPE        &none  &none      &none     &none     &none      &none
+                                     &kp LT  &kp GT  &kp SPACE        &kp RET   &trans    &kp RALT
             >;
         };
+
+        navigate_layer {
+            display-name = "NAVIGATE";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+            bindings = <
+&none  &none      &none     &none     &none      &none                   &kp C_AC_UNDO  &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_PASTE  &kp C_AC_REDO  &none
+&none &kp LCTRL   &kp LALT  &kp LGUI  &kp LSHFT  &none                   &kp CAPS       &kp LEFT      &kp DOWN       &kp UP          &kp RIGHT      &none
+&none  &none      &none     &none     &none      &none                   &kp C_AC_INS   &kp HOME      &kp PG_DN      &kp PG_UP       &kp END        &none
+                                   &none  &none  &none                   &kp RET  &kp BSPC  &kp DEL
+            >;
+        };
+   
+        media_layer {
+            display-name = "MEDIA";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+            bindings = <
+&rgb_ug RGB_TOG    &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF        &none         &none         &none         &none         &none         &none
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFR        &none         &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &none
+&none              &none            &none            &none            &none            &none                  &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 
+                                                                         &none  &none  &none                  &none  &kp C_PP      &kp C_MUTE
+            >;
+        }
     };
 };
