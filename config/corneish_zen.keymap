@@ -96,7 +96,7 @@
 //                    |  <  |  >  |SPACE|   | ENT |     | ALT |
             bindings = <
 &kp GRAVE  &kp EXCL  &kp AT  &kp POUND  &kp DLLR   &kp PRCNT        &kp CARET  &kp AMPS      &kp ASTRK     &kp LPAR     &kp RPAR      &none
-&kp LBRC   &kp LSHFT &kp LCTRL  &kp LALT  &kp LGUI  &kp RBRC        &kp SEMI  &kp COLON   &kp UNDER  &kp QUOTE  &kp EQUAL  &none
+&kp LBRC   &kp LSHFT &kp LCTRL  &kp LALT  &kp LGUI  &kp RBRC        &kp SEMI  &kp COLON   &kp UNDER  &kp DQT  &kp EQUAL  &none
 &kp LBKT      &kp LT  &kp FSLH  &kp BSLH     &kp GT  &kp RBKT        &none  &none      &none     &none     &none      &none
                                      &kp LT  &kp GT  &kp SPACE        &kp RET   &trans    &kp RALT
             >;
