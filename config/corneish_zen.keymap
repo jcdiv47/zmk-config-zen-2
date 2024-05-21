@@ -54,13 +54,23 @@
 };
 
 / {
+    ltt: ltt {
+        compatible = "zmk,behavior-hold-tap";
+        label = "LTT";
+        bindings = <&lt>, <&kp>;
+
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+    };
+
     mtt: mtt {
         compatible = "zmk,behavior-hold-tap";
         label = "MTT";
         bindings = <&kp>, <&kp>;
 
         #binding-cells = <2>;
-        flavor = "tap-preferred";
+        flavor = "balanced";
         tapping-term-ms = <200>;
     };
 };
