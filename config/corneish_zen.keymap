@@ -73,14 +73,14 @@
             display-name = "QWERTY";
 // --------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// |  ESC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             bindings = <
 &kp TAB &kp Q     &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-&lt NAVIGATE ESC  &mtt LSHFT A &mtt LCTRL S &mtt LALT D &mtt LGUI F &kp G   &kp H &mtt LGUI J  &mtt LALT K     &mtt LCTRL L   &mtt LSHFT SEMI &kp SQT
+&mt LCTRL ESC  &mtt LSHFT A &mtt LCTRL S &mtt LALT D &mtt LGUI F &kp G   &kp H &mtt LGUI J  &mtt LALT K     &mtt LCTRL L   &mtt LSHFT SEMI &kp SQT
 &kp LSHFT &kp Z   &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-               &lt MEDIA ESC &lt NUMBER TAB &kp SPACE   &kp RET &lt SYMBOL BSPC &kp DEL
+               &lt NAVIGATE CAPS &lt NUMBER TAB &kp SPACE   &kp RET &lt SYMBOL BSPC &lt MEDIA DEL
             >;
         };
 
@@ -103,7 +103,7 @@
             display-name = "NUMBER";
 // -----------------------------------------------------------------------------------------
 // |  `  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      | BKSP
-// |  =  | SHFT| CTRL| GUI | GUI |     |   |     | GUI | ALT | CTRL| SHFT|      |
+// |  -  | SHFT| CTRL| GUI | GUI |  =  |   |     | GUI | ALT | CTRL| SHFT|      |
 // |  ,  |     |     |     |     |     |   |     |     |     |     |     |      |
 //                   |     |     |SPACE|   |     |     |     |
             bindings = <
@@ -118,14 +118,14 @@
             display-name = "SYMBOL";
 // -----------------------------------------------------------------------------------------
 // |  ~  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// |  ;  |  :  |  _  |  "  |  =  |  +  |   |     | CTRL| ALT | GUI | SHFT|  \   |
+// |  ;  |  :  |  _  |  "  |  =  |  +  |   |     | GUI | ALT | CTRL| SHFT|  \   |
 // |     |     |     |     |     |  |  |   |     |     |     |     |     |      |
-//                    |     |     |SPACE|   | ENT |     | ALT |
+//                    |     |     |SPACE|   | ENT |     |    |
             bindings = <
 &kp TILDE  &kp EXCL  &kp AT  &kp POUND  &kp DLLR   &kp PRCNT        &kp CARET  &kp AMPS      &kp ASTRK     &kp LPAR     &kp RPAR      &kp BSPC
 &kp SEMI   &kp COLON &kp UNDER  &kp DQT  &kp EQUAL  &kp PLUS        &none     &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT   &kp BSLH
 &none   &none  &none  &none     &none  &none        &none  &none      &none     &none     &none      &none
-                                     &none  &none  &kp SPACE        &kp RET   &trans    &kp RALT
+                                     &none  &none  &kp SPACE        &kp RET   &none     &kp DEL
             >;
         };
 
@@ -140,7 +140,7 @@
 &none  &kp LC(N1)     &kp LC(N2)     &kp LC(N3)     &kp LC(N4)      &kp LC(N5)   &kp LC(N6)  &kp LC(N7)  &kp UP  &none  &none  &none
 &none  &kp LSHFT   &kp LCTRL  &kp LALT  &kp LGUI  &none                  &none    &kp LEFT       &kp DOWN     &kp RIGHT      &none         &none
 &none  &kp C_AC_UNDO  &none &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_REDO                   &kp C_AC_INS   &kp HOME      &kp PG_DN      &kp PG_UP       &kp END        &none
-                                   &none  &none  &none                   &kp RET  &kp BSPC  &kp DEL
+                                   &none  &none  &kp SPACE                   &kp RET  &kp BSPC  &kp DEL
             >;
         };
    
@@ -155,7 +155,7 @@
 &rgb_ug RGB_TOG    &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF        &none         &none         &none         &none         &none         &none
 &ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFR        &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &none         &none
 &none              &none            &none            &none            &none            &none                  &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 
-                                                                         &none  &none  &none                  &none  &kp C_PP      &kp C_MUTE
+                                                                         &none  &none  &none                    &kp C_PP      &kp C_MUTE    &none
             >;
         };
     };
