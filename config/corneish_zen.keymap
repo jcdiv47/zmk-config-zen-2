@@ -86,10 +86,10 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             bindings = <
-&kp TAB &kp Q     &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-&mt LCTRL ESC  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-&kp LSHFT &kp Z   &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LALT
-               &kp LGUI  &mo NUMSYM &kp SPACE   &ltt MEDIA RET &kp BSPC &lt NAVIGATE DEL
+&kp TAB        &kp Q  &kp W  &kp E  &kp R  &kp T     &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&mt LCTRL ESC  &kp A  &kp S  &kp D  &kp F  &kp G     &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT      &kp Z  &kp X  &kp C  &kp V  &kp B     &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LALT
+                  &kp LGUI  &mo NUMSYM &kp SPACE     &ltt MEDIA RET &kp BSPC &lt NAVIGATE DEL
             >;
         };
 
@@ -111,15 +111,15 @@
         numsym_layer {
             display-name = "NUMSYM";
 // -----------------------------------------------------------------------------------------
-// |  `  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      | BKSP
-// |  -  | SHFT| CTRL| GUI | GUI |  =  |   |     | GUI | ALT | CTRL| SHFT|      |
-// |  ,  |     |     |     |     |     |   |     |     |     |     |     |      |
-//                   |     |     |SPACE|   |     |     |     |
+// | TAB |  !  |  @  |  #  |  $  |  %  |       |  ^  |  &  |  *  |  (  |  )  |  \  |
+// | CTRL|  1  |  2  |  3  |  4  |  5  |       |  -  |  =  |  `  |  [  |  ]  |  |  |
+// | SHFT|  6  |  7  |  8  |  9  |  0  |       |  _  |  +  |  ~  |  {  |  }  | ALT |
+//                   |     |     |SPACE|       |     |     |     |
             bindings = <
-&kp TAB  &kp EXCL  &kp AT  &kp POUND  &kp DLLR   &kp PRCNT        &kp CARET  &kp AMPS      &kp ASTRK     &kp LPAR     &kp RPAR      &kp BSLH
-&kp LCTRL  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                 &kp N6  &kp N7      &kp N8     &kp N9     &kp N0      &kp PIPE
-&kp LSHFT  &kp MINUS  &kp EQUAL  &kp GRAVE  &kp LBKT  &kp RBKT                      &kp UNDER  &kp PLUS      &kp TILDE     &kp LBRC     &kp RBRC      &kp LALT
-                        &kp LGUI  &none  &kp SPACE         &kp RET  &kp BSPC   &none
+&kp TAB    &kp EXCL  &kp AT  &kp POUND  &kp DLLR  &kp PRCNT        &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSLH
+&kp LCTRL  &kp N1    &kp N2  &kp N3     &kp N4    &kp N5           &kp MINUS  &kp EQUAL  &kp GRAVE  &kp LBKT  &kp RBKT  &kp PIPE
+&kp LSHFT  &kp N6    &kp N7  &kp N8     &kp N9    &kp N0           &kp UNDER  &kp PLUS   &kp TILDE  &kp LBRC  &kp RBRC  &kp LALT
+                                     &GUI  &none  &kp SPACE         &kp RET  &kp BSPC  &none
             >;
         };
 
@@ -131,10 +131,10 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-&none  &kp LC(N1)     &kp LC(N2)     &kp LC(N3)     &kp LC(N4)      &kp LC(N5)   &kp LC(N6)  &kp LC(N7)  &kp UP  &none  &none  &none
-&none  &kp LSHFT   &kp LCTRL  &kp LALT  &kp LGUI  &none                  &none    &kp LEFT       &kp DOWN     &kp RIGHT      &none         &none
-&none  &kp C_AC_UNDO  &none &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_REDO                   &kp C_AC_INS   &kp HOME      &kp PG_DN      &kp PG_UP       &kp END        &none
-                                   &none  &none  &kp SPACE                   &kp RET  &kp BSPC  &none
+&none  &kp LC(N1)     &kp LC(N2)  &kp LC(N3)    &kp LC(N4)     &kp LC(N5)        &kp LC(N6)    &kp LC(N7)  &kp UP     &none      &none    &none
+&none  &kp LSHFT      &kp LCTRL   &kp LALT      &kp LGUI       &none             &none         &kp LEFT    &kp DOWN   &kp RIGHT  &none    &none
+&none  &kp C_AC_UNDO  &none       &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_REDO     &kp C_AC_INS  &kp HOME    &kp PG_DN  &kp PG_UP  &kp END  &none
+                                                 &none  &none  &kp SPACE         &kp RET  &kp BSPC  &none
             >;
         };
    
