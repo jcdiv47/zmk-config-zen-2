@@ -15,9 +15,8 @@
 #define QWERTY 0
 #define COLEMAK 1
 #define NUMBER 2
-#define SYMBOL 3
-#define NAVIGATE 4
-#define MEDIA 5
+#define NAVIGATE 3
+#define MEDIA 4
 
 / {
     chosen {
@@ -34,21 +33,21 @@
             timeout-ms = <50>;
             key-positions = <3 4>;
             bindings = <&mt RBRC LBRC>;
-            layers = <NUMBER SYMBOL>;
+            layers = <NUMBER>;
         };
 
         combo_bkt {
             timeout-ms = <50>;
             key-positions = <15 16>;
             bindings = <&mt RBKT LBKT>;
-            layers = <NUMBER SYMBOL>;
+            layers = <NUMBER>;
         };
 
         combo_lt {
             timeout-ms = <50>;
             key-positions = <27 28>;
             bindings = <&mt GT LT>;
-            layers = <NUMBER SYMBOL>;
+            layers = <NUMBER>;
         };
     };
 };
@@ -71,7 +70,7 @@
         bindings = <&kp>, <&kp>;
         require-prior-idle-ms = <125>;
         flavor = "tap-preferred";
-        tapping-term-ms = <400>;
+        tapping-term-ms = <500>;
     };
 
 };
@@ -88,9 +87,9 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             bindings = <
-&mt LC(LGUI) TAB   &kp  Q          &kp W         &kp E        &kp R        &kp T        &kp Y  &kp U        &kp I        &kp O        &kp P            &kp BSPC
+&mt LC(LGUI) TAB  &kp  Q          &kp W         &kp E        &kp R        &kp T        &kp Y  &kp U        &kp I        &kp O        &kp P             &kp BSPC
 &lt NAVIGATE ESC  &mtt LSHFT A    &mtt LCTRL S  &mtt LALT D  &mtt LGUI F  &kp G        &kp H  &mtt LGUI J  &mtt LALT K  &mtt LCTRL L  &mtt LSHFT SEMI  &kp SQT
-&kp LSHFT          &kp Z           &kp X         &kp C        &kp V        &kp B        &kp N  &kp M        &kp COMMA    &kp DOT      &kp FSLH         &kp LALT
+&kp LC(LSHFT)     &kp Z           &kp X         &kp C        &kp V        &kp B        &kp N  &kp M        &kp COMMA    &kp DOT      &kp FSLH          &kp LS(LGUI)
                                              &mo SYMBOL  &mo NUMBER  &kp SPACE        &kp RET &kp BSPC &lt MEDIA DEL
             >;
         };
@@ -118,25 +117,10 @@
 // | SHFT|  6  |  7  |  8  |  9  |  0  |       |  _  |  +  |  ~  |  {  |  }  | ALT |
 //                   |     |     |SPACE|       |     |     |     |
             bindings = <
-&kp GRAVE          &kp N1      &kp N2      &kp N3      &kp N4      &kp N5            &kp N6  &kp N7        &kp N8       &kp N9         &kp N0     &none
-&lt NAVIGATE ESC  &kp LSHFT   &kp LCTRL   &kp LALT    &kp LGUI    &none             &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none
-&kp LSHFT          &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)        &kp LC(N6)  &kp LC(N7)        &kp LC(N8)    &kp LC(N9)       &none      &none
-                                &trans  &none  &kp SPACE         &kp RET  &kp BSPC  &trans
-            >;
-        };
-
-        symbol_layer {
-            display-name = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// | TAB |  !  |  @  |  #  |  $  |  %  |       |  ^  |  &  |  *  |  (  |  )  |  \  |
-// | CTRL|  1  |  2  |  3  |  4  |  5  |       |  -  |  =  |  `  |  [  |  ]  |  |  |
-// | SHFT|  6  |  7  |  8  |  9  |  0  |       |  _  |  +  |  ~  |  {  |  }  | ALT |
-//                   |     |     |SPACE|       |     |     |     |
-            bindings = <
-&kp TILDE          &kp EXCL  &kp AT  &kp POUND  &kp DLLR  &kp PRCNT        &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSLH
-&lt NAVIGATE ESC  &kp LSHFT   &kp LCTRL   &kp LALT    &kp LGUI    &none      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp SQT
-&kp LSHFT  &kp N6    &kp N7  &kp N8     &kp N9    &kp N0           &kp UNDER  &kp PLUS   &kp TILDE  &kp LBRC  &kp RBRC  &kp LALT
-                                &none  &none  &kp SPACE         &kp RET  &kp BSPC  &none
+&kp LBKT  &kp EXCL  &kp AT  &kp POUND  &kp DLLR   &kp PRCNT        &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &kp RBKT
+&kp LBRC  &kp N1    &kp N2  &kp N3     &kp N4     &kp N5           &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp RBRC
+&trans    &trans    &trans  &kp TILDE  &kp COLON  &kp UNDER        &kp EQUAL  &kp PLUS  &kp MINUS  &kp BSLH  &kp PIPE  &trans
+                                   &trans  &none  &kp SPACE        &kp RET  &kp BSPC  &trans
             >;
         };
 
