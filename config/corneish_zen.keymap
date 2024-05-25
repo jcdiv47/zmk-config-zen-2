@@ -112,7 +112,7 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             bindings = <
-&tab_grave         &kp Q         &kp W         &kp F        &kp P        &kp G        &kp J  &kp L        &kp U        &kp Y         &kp MINUS     &kp EQUAL
+&kp TAB         &kp Q         &kp W         &kp F        &kp P        &kp G        &kp J  &kp L        &kp U        &kp Y         &kp MINUS     &kp EQUAL
 &ltt NAVIGATE ESC  &mtt LSHFT A  &mtt LCTRL R  &mtt LALT S  &mtt LGUI T  &kp D        &kp H  &mtt LGUI N  &mtt LALT E  &mtt LCTRL I  &mtt LSHFT O  &kp SEMI
 &kp LSHFT          &kp Z         &kp X         &kp C        &kp V        &kp B        &kp K  &kp M        &kp COMMA    &kp DOT       &kp FSLH      &kp BSLH
                                                        &kp LGUI &mo 1 &kp SPACE        &kp RET  &kp BSPC  &kp RALT
