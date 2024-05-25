@@ -70,7 +70,7 @@
         bindings = <&kp>, <&kp>;
         require-prior-idle-ms = <125>;
         flavor = "tap-preferred";
-        tapping-term-ms = <500>;
+        tapping-term-ms = <350>;
     };
 
 };
