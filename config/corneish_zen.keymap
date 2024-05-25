@@ -70,8 +70,8 @@
         label = "MTT";
         bindings = <&kp>, <&kp>;
         require-prior-idle-ms = <125>;
-        flavor = "balanced";
-        tapping-term-ms = <300>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <400>;
     };
 
 };
