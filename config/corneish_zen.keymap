@@ -91,20 +91,20 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB                &kp Q        &kp W        &kp E         &kp R         &kp T        &kp Y     &kp U         &kp I         &kp O        &kp P           &kp BSLH
-&mt LS(LA(LCTRL)) ESC  &mtt LGUI A  &mtt LALT S  &mtt LCTRL D  &mtt LSHFT F  &kp G        &kp H     &mtt LSHFT J  &mtt LCTRL K  &mtt LALT L  &mtt LGUI SEMI  &kp SQT
-&kp LA(LC(LG(LSHFT)))  &kp Z        &kp X        &kp C         &kp V         &kp B        &kp N     &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp RET
-                                                 &mo 3         &mo 2         &kp SPACE    &kp BSPC  &mo 4         &mo 5
+&kp TAB                &kp Q         &kp W        &kp E        &kp R         &kp T        &kp Y     &kp U         &kp I        &kp O        &kp P            &kp BSLH
+&mt LS(LA(LCTRL)) ESC  &mtt LCTRL A  &mtt LALT S  &mtt LGUI D  &mtt LSHFT F  &kp G        &kp H     &mtt LSHFT J  &mtt LGUI K  &mtt LALT L  &mtt LCTRL SEMI  &kp SQT
+&kp LA(LC(LG(LSHFT)))  &kp Z         &kp X        &kp C        &kp V         &kp B        &kp N     &kp M         &kp COMMA    &kp DOT      &kp FSLH         &kp RET
+                                                  &mo 3        &mo 2         &kp SPACE    &kp BSPC  &mo 4         &mo 5
             >;
         };
 
         colemak_layer {
             display-name = "COLEMAK";
             bindings = <
-&kp TAB                &kp Q        &kp W        &kp F         &kp P         &kp G        &kp J     &kp L         &kp U         &kp Y        &kp FSLH     &kp BSLH
-&mt LS(LA(LCTRL)) ESC  &mtt LGUI A  &mtt LALT R  &mtt LCTRL S  &mtt LSHFT T  &kp D        &kp H     &mtt LSHFT N  &mtt LCTRL E  &mtt LALT I  &mtt LGUI O  &kp SQT
-&kp LA(LC(LG(LSHFT)))  &kp Z        &kp X        &kp C         &kp V         &kp B        &kp K     &kp M         &kp COMMA     &kp DOT      &kp SEMI     &kp RET
-                                                 &mo 3         &mo 2         &kp SPACE    &kp BSPC  &mo 4         &mo 5
+&kp TAB                &kp Q         &kp W        &kp F        &kp P         &kp G        &kp J     &kp L         &kp U        &kp Y        &kp FSLH      &kp BSLH
+&mt LS(LA(LCTRL)) ESC  &mtt LCTRL A  &mtt LALT R  &mtt LGUI S  &mtt LSHFT T  &kp D        &kp H     &mtt LSHFT N  &mtt LGUI E  &mtt LALT I  &mtt LCTRL O  &kp SQT
+&kp LA(LC(LG(LSHFT)))  &kp Z         &kp X        &kp C        &kp V         &kp B        &kp K     &kp M         &kp COMMA    &kp DOT      &kp SEMI      &kp RET
+                                                  &mo 3        &mo 2         &kp SPACE    &kp BSPC  &mo 4         &mo 5
             >;
         };
 
@@ -118,9 +118,9 @@
             //                   |     |     |SPACE|   |     |     |     |
 
             bindings = <
-&kp GRAVE  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0    &kp BSPC
-&none      &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none         &none       &kp LSHFT   &kp LCTRL   &kp LALT    &kp LGUI  &none
-&none      &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)    &kp LC(N6)  &kp LC(N7)  &kp LC(N8)  &kp LC(N9)  &none     &none
+&kp GRAVE  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0     &kp BSPC
+&none      &kp LCTRL   &kp LALT    &kp LGUI    &kp LSHFT   &none         &none       &kp LSHFT   &kp LGUI    &kp LALT    &kp LCTRL  &none
+&none      &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)    &kp LC(N6)  &kp LC(N7)  &kp LC(N8)  &kp LC(N9)  &none      &none
                                    &none       &none       &kp SPACE     &none       &none       &none
             >;
         };
@@ -135,9 +135,9 @@
             //                    |     |     |SPACE|   | ENT |     |    |
 
             bindings = <
-&kp TILDE  &kp EXCL        &kp AT    &kp POUND  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp UNDER  &kp LGUI        &kp LALT  &kp LCTRL  &kp LSHFT  &kp MINUS    &kp EQUAL  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp PLUS
-&none      &kp LC(LG(N1))  &none     &none      &none      &none        &none      &none      &none      &none     &none     &none
+&kp TILDE  &kp EXCL        &kp AT    &kp POUND  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR   &kp BSPC
+&kp UNDER  &kp LCTRL       &kp LALT  &kp LGUI   &kp LSHFT  &kp MINUS    &kp EQUAL  &kp LSHFT  &kp LGUI   &kp LALT  &kp LCTRL  &kp PLUS
+&none      &kp LC(LG(N1))  &none     &none      &none      &none        &none      &none      &none      &none     &none      &none
                                      &none      &none      &kp SPACE    &kp RET    &none      &kp DEL
             >;
         };
@@ -153,7 +153,7 @@
 
             bindings = <
 &none  &kp LC(N1)     &kp LC(N2)  &kp LC(N3)    &kp LC(N4)     &kp LC(N5)       &kp LC(N6)    &kp LC(N7)  &kp UP     &none      &none    &none
-&none  &kp LGUI       &kp LALT    &kp LCTRL     &kp LSHFT      &none            &none         &kp LEFT    &kp DOWN   &kp RIGHT  &none    &none
+&none  &kp LCTRL      &kp LALT    &kp LGUI      &kp LSHFT      &none            &none         &kp LEFT    &kp DOWN   &kp RIGHT  &none    &none
 &none  &kp C_AC_UNDO  &none       &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_REDO    &kp C_AC_INS  &kp HOME    &kp PG_DN  &kp PG_UP  &kp END  &none
                                   &none         &none          &kp SPACE        &kp RET       &kp BSPC    &kp DEL
             >;
