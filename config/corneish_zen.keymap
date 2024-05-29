@@ -35,19 +35,14 @@
             timeout-ms = <50>;
             key-positions = <3 4>;
             bindings = <&mt RBRC LBRC>;
-            layers = <3>;
+            layers = <2>;
         };
 
         combo_bkt {
             timeout-ms = <50>;
             key-positions = <15 16>;
             bindings = <&mt RBKT LBKT>;
-            layers = <3>;
-        };
-
-        tog_colemak {
-            bindings = <&tog 0>;
-            key-positions = <0 24 35 11>;
+            layers = <2>;
         };
     };
 };
@@ -72,6 +67,30 @@
         flavor = "balanced";
         tapping-term-ms = <300>;
     };
+
+    rh_pht: rh_pht {
+        compatible = "zmk,behavior-hold-tap";
+        label = "RH_PHT";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <100>;
+        quick-tap-ms = <200>;
+        flavor = "tap-unless-interrupted";
+        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 6 7 8 9 10 11 18 23 30 31 32 33 34 35>;
+    };
+
+    lh_pht: lh_pht {
+        compatible = "zmk,behavior-hold-tap";
+        label = "LH_PHT";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <100>;
+        quick-tap-ms = <200>;
+        flavor = "tap-unless-interrupted";
+        hold-trigger-key-positions = <0 2 3 4 5 12 17 24 25 26 27 28 29 6 7 8 9 10 11 18 23 30 31 32 33 34 35 19 20 21 22 23 1>;
+    };
 };
 
 / {
@@ -91,20 +110,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB                &kp Q         &kp W        &kp E        &kp R         &kp T        &kp Y     &kp U         &kp I        &kp O        &kp P            &kp BSLH
-&mt LS(LA(LCTRL)) ESC  &mtt LCTRL A  &mtt LALT S  &mtt LGUI D  &mtt LSHFT F  &kp G        &kp H     &mtt LSHFT J  &mtt LGUI K  &mtt LALT L  &mtt LCTRL SEMI  &kp SQT
-&kp LA(LC(LG(LSHFT)))  &kp Z         &kp X        &kp C        &kp V         &kp B        &kp N     &kp M         &kp COMMA    &kp DOT      &kp FSLH         &kp RET
-                                                  &mo 3        &mo 2         &kp SPACE    &kp BSPC  &mo 4         &mo 5
-            >;
-        };
-
-        colemak_layer {
-            display-name = "COLEMAK";
-            bindings = <
-&kp TAB                &kp Q         &kp W        &kp F        &kp P         &kp G        &kp J     &kp L         &kp U        &kp Y        &kp FSLH      &kp BSLH
-&mt LS(LA(LCTRL)) ESC  &mtt LCTRL A  &mtt LALT R  &mtt LGUI S  &mtt LSHFT T  &kp D        &kp H     &mtt LSHFT N  &mtt LGUI E  &mtt LALT I  &mtt LCTRL O  &kp SQT
-&kp LA(LC(LG(LSHFT)))  &kp Z         &kp X        &kp C        &kp V         &kp B        &kp K     &kp M         &kp COMMA    &kp DOT      &kp SEMI      &kp RET
-                                                  &mo 3        &mo 2         &kp SPACE    &kp BSPC  &mo 4         &mo 5
+&mt LS(LA(LC(LGUI))) TAB  &kp Q            &kp W           &kp E           &kp R            &kp T        &kp Y     &kp U            &kp I           &kp O           &kp P               &kp BSLH
+&mt LS(LA(LCTRL)) ESC     &lh_pht LCTRL A  &lh_pht LALT S  &lh_pht LGUI D  &lh_pht LSHFT F  &kp G        &kp H     &rh_pht LSHFT J  &rh_pht LGUI K  &rh_pht LALT L  &rh_pht LCTRL SEMI  &kp SQT
+&kp LC(LGUI)              &kp Z            &kp X           &kp C           &kp V            &kp B        &kp N     &kp M            &kp COMMA       &kp DOT         &kp FSLH            &kp RET
+                                                           &mo 2           &mo 1            &kp SPACE    &kp BSPC  &mo 3            &ltt 4 DEL
             >;
         };
 
@@ -118,10 +127,10 @@
             //                   |     |     |SPACE|   |     |     |     |
 
             bindings = <
-&kp GRAVE  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0     &kp BSPC
+&kp GRAVE  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0     &none
 &none      &kp LCTRL   &kp LALT    &kp LGUI    &kp LSHFT   &none         &none       &kp LSHFT   &kp LGUI    &kp LALT    &kp LCTRL  &none
 &none      &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)    &kp LC(N6)  &kp LC(N7)  &kp LC(N8)  &kp LC(N9)  &none      &none
-                                   &none       &none       &kp SPACE     &none       &none       &none
+                                   &none       &none       &none         &none       &none       &none
             >;
         };
 
@@ -135,10 +144,10 @@
             //                    |     |     |SPACE|   | ENT |     |    |
 
             bindings = <
-&kp TILDE  &kp EXCL        &kp AT    &kp POUND  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR   &kp BSPC
-&kp UNDER  &kp LCTRL       &kp LALT  &kp LGUI   &kp LSHFT  &kp MINUS    &kp EQUAL  &kp LSHFT  &kp LGUI   &kp LALT  &kp LCTRL  &kp PLUS
-&none      &kp LC(LG(N1))  &none     &none      &none      &none        &none      &none      &none      &none     &none      &none
-                                     &none      &none      &kp SPACE    &kp RET    &none      &kp DEL
+&kp TILDE  &kp EXCL        &kp AT          &kp POUND       &kp DLLR        &kp PRCNT         &kp CARET       &kp AMPS        &kp ASTRK       &kp LPAR        &kp RPAR   &none
+&kp UNDER  &kp LCTRL       &kp LALT        &kp LGUI        &kp LSHFT       &kp MINUS         &kp EQUAL       &kp LSHFT       &kp LGUI        &kp LALT        &kp LCTRL  &kp PLUS
+&none      &kp LC(LG(N1))  &kp LC(LG(N2))  &kp LC(LG(N3))  &kp LC(LG(N4))  &kp LC(LG(N5))    &kp LC(LG(N6))  &kp LC(LG(N7))  &kp LC(LG(N8))  &kp LC(LG(N9))  &none      &none
+                                           &none           &none           &none             &none           &none           &none
             >;
         };
 
@@ -155,7 +164,7 @@
 &none  &kp LC(N1)     &kp LC(N2)  &kp LC(N3)    &kp LC(N4)     &kp LC(N5)       &kp LC(N6)    &kp LC(N7)  &kp UP     &none      &none    &none
 &none  &kp LCTRL      &kp LALT    &kp LGUI      &kp LSHFT      &none            &none         &kp LEFT    &kp DOWN   &kp RIGHT  &none    &none
 &none  &kp C_AC_UNDO  &none       &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_REDO    &kp C_AC_INS  &kp HOME    &kp PG_DN  &kp PG_UP  &kp END  &none
-                                  &none         &none          &kp SPACE        &kp RET       &kp BSPC    &kp DEL
+                                  &none         &none          &none            &none         &none       &none
             >;
         };
 
