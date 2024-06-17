@@ -111,9 +111,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mt LS(LA(LC(LGUI))) TAB  &kp Q            &kp W           &kp F           &kp P            &kp B        &kp J     &kp L            &kp U           &kp Y           &kp SEMI         &kp BSLH
-&mt LS(LA(LCTRL)) ESC     &lh_pht LCTRL A  &lh_pht LALT R  &lh_pht LGUI S  &lh_pht LSHFT T  &kp G        &kp M     &rh_pht LSHFT N  &rh_pht LGUI E  &rh_pht LALT I  &rh_pht LCTRL O  &kp SQT
-&kp LC(LGUI)              &kp Z            &kp X           &kp C           &kp D            &kp V        &kp K     &kp H            &kp COMMA       &kp DOT         &kp FSLH         &kp RET
+&mt LS(LA(LC(LGUI))) TAB  &kp Q            &kp W           &kp F           &kp P            &kp G        &kp J     &kp L            &kp U           &kp Y           &kp FSLH         &kp BSLH
+&mt LS(LA(LCTRL)) ESC     &lh_pht LCTRL A  &lh_pht LALT R  &lh_pht LGUI S  &lh_pht LSHFT T  &kp D        &kp H     &rh_pht LSHFT N  &rh_pht LGUI E  &rh_pht LALT I  &rh_pht LCTRL O  &kp SQT
+&kp LC(LGUI)              &kp Z            &kp X           &kp C           &kp V            &kp B        &kp K     &kp M            &kp COMMA       &kp DOT         &kp SEMI         &kp RET
                                                            &mo 2           &mo 1            &kp SPACE    &kp BSPC  &mo 3            &kp DEL
             >;
         };
