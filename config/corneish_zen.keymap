@@ -35,14 +35,12 @@
             timeout-ms = <50>;
             key-positions = <3 4>;
             bindings = <&mt RBRC LBRC>;
-            layers = <2>;
         };
 
         combo_bkt {
             timeout-ms = <50>;
             key-positions = <15 16>;
             bindings = <&mt RBKT LBKT>;
-            layers = <2>;
         };
 
         grave {
@@ -128,10 +126,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mt LC(LGUI) TAB       &kp Q            &kp W           &kp F           &kp P            &kp G        &kp J    &kp L            &kp U           &kp Y           &kp FSLH         &kp BSLH
-&mt LS(LA(LCTRL)) ESC  &lh_pht LCTRL A  &lh_pht LALT R  &lh_pht LGUI S  &lh_pht LSHFT T  &kp D        &kp H    &rh_pht LSHFT N  &rh_pht LGUI E  &rh_pht LALT I  &rh_pht LCTRL O  &kp SEMI
-&kp LC(LA(LS(LGUI)))   &kp Z            &kp X           &kp C           &kp V            &kp B        &kp K    &kp M            &kp COMMA       &kp DOT         &kp SQT          &kp RET
-                                                        &mo 2           &mo 1            &kp SPACE    &bs_del  &mo 3            &mo 4
+&mt LC(LS(LA(LGUI))) TAB  &kp Q            &kp W           &kp F           &kp P            &kp G    &kp J  &kp L            &kp U           &kp Y           &kp FSLH         &kp BSLH
+&mt LCTRL ESC             &lh_pht LCTRL A  &lh_pht LALT R  &lh_pht LGUI S  &lh_pht LSHFT T  &kp D    &kp H  &rh_pht LSHFT N  &rh_pht LGUI E  &rh_pht LALT I  &rh_pht LCTRL O  &kp SEMI
+&kp LC(LGUI)              &kp Z            &kp X           &kp C           &kp V            &kp B    &kp K  &kp M            &kp COMMA       &kp DOT         &kp SQT          &mo 3
+                                                           &kp LGUI        &kp SPACE        &mo 1    &mo 2  &bs_del          &kp ENTER
             >;
         };
 
@@ -145,27 +143,10 @@
             //                   |     |     |SPACE|   |     |     |     |
 
             bindings = <
-&kp GRAVE  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0     &none
-&trans     &kp LCTRL   &kp LALT    &kp LGUI    &kp LSHFT   &kp MINUS     &kp EQUAL   &kp LSHFT   &kp LGUI    &kp LALT    &kp LCTRL  &none
-&trans     &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)    &kp LC(N6)  &kp LC(N7)  &kp LC(N8)  &kp LC(N9)  &none      &none
-                                   &trans      &trans      &none         &none       &none       &none
-            >;
-        };
-
-        symbol_layer {
-            display-name = "SYMBOL";
-
-            // -----------------------------------------------------------------------------------------
-            // |  ~  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // |  ;  |  :  |  _  |  "  |  =  |  +  |   |     | GUI | ALT | CTRL| SHFT|  \   |
-            // |     |     |     |     |     |  |  |   |     |     |     |     |     |      |
-            //                    |     |     |SPACE|   | ENT |     |    |
-
-            bindings = <
-&kp TILDE  &kp EXCL        &kp AT          &kp POUND       &kp DLLR        &kp PRCNT         &kp CARET       &kp AMPS        &kp ASTRK       &kp LPAR        &kp RPAR   &none
-&kp UNDER  &kp LCTRL       &kp LALT        &kp LGUI        &kp LSHFT       &kp MINUS         &kp EQUAL       &kp LSHFT       &kp LGUI        &kp LALT        &kp LCTRL  &kp PLUS
-&trans     &kp LC(LG(N1))  &kp LC(LG(N2))  &kp LC(LG(N3))  &kp LC(LG(N4))  &kp LC(LG(N5))    &kp LC(LG(N6))  &kp LC(LG(N7))  &kp LC(LG(N8))  &kp LC(LG(N9))  &none      &none
-                                           &none           &none           &none             &none           &none           &none
+&kp GRAVE  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0     &trans
+&trans     &kp LCTRL   &kp LALT    &kp LGUI    &kp LSHFT   &kp MINUS     &kp EQUAL   &kp LSHFT   &kp LGUI    &kp LALT    &kp LCTRL  &trans
+&trans     &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)    &kp LC(N6)  &kp LC(N7)  &kp LC(N8)  &kp LC(N9)  &trans     &trans
+                                   &trans      &trans      &trans        &trans      &trans      &trans
             >;
         };
 
@@ -179,10 +160,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none   &trans          &trans          &trans          &trans          &trans            &trans          &trans          &trans          &trans          &trans    &trans
-&trans  &kp LCTRL       &kp LALT        &kp LGUI        &kp LSHFT       &none             &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp HOME  &kp END
+&trans  &trans          &trans          &trans          &trans          &trans            &trans          &trans          &trans          &trans          &trans    &trans
+&trans  &kp LCTRL       &kp LALT        &kp LGUI        &kp LSHFT       &trans            &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp HOME  &kp END
 &trans  &kp LC(LG(N1))  &kp LC(LG(N2))  &kp LC(LG(N3))  &kp LC(LG(N4))  &kp LC(LG(N5))    &kp LC(LG(N6))  &kp LC(LG(N7))  &kp LC(LG(N8))  &kp LC(LG(N9))  &trans    &trans
-                                        &none           &none           &none             &none           &none           &trans
+                                        &trans          &trans          &trans            &trans          &trans          &trans
             >;
         };
 
